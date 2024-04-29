@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="flex justify-between  bg-white p-3 shadow">
+        <h2 class="text-2xl text-dark">Gsap Tutorial</h2>
+    </div>
+    <div class="mb-2" id="page1">
+        <h1 class=" text-center font-bold text-3xl"><span class="bg-white px-2  text-dark">Day-1</span></h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 mt-[0.2rem]">
+            <div class="grid grid-cols-2">
+                <div class="flex flex-col gap-2 p-2">
+                    <div id="box" class="flex justify-center items-center">
+                        <h2 class="text-white">box 1</h2>
+                    </div>
+                    <div id="box2" class="flex justify-center items-center w-[100px] h-[100px] bg-yellow-500">
+                        <h2 class="text-white">box 2</h2>
+                    </div>
+                </div>
+                <div class="text-white bg-pink-500 mr-2 p-3 rounded" id="heading-h">
+                    <h1>I am ravi</h1>
+                    <h1>I am web developer</h1>
+                    <h1>& apps Developer</h1>
+                    <pre class="text-semibold text-white mt-5">
+    gsap.from('#heading-h h1',{
+        duration:2,
+        x:-150,
+        opacity:0,
+        repeat:-1,
+        yoyo:true,
+        ease:'power2.inOut',
+        stagger:0.5
+    })
+                    </pre>
+                </div>
+            </div>
+            <div class="w-full h-[400px] bg-white p-2">
+                <h1>Basic of Gsap : </h1>
+                <div class="ml-5 grid grid-cols-2">
+                    <ul>
+                        <li><span class="font-semibold">Gsap.to(Box-1) :</span>
+                            <p class="text-xl"> gsap.to('#box',{
+                                height:150,
+                                x:150,
+                                duration:2,
+                                ease:'power2.inOut',
+                                onComplete:()=>{
+                                console.log('animation complete')
+                                }
+                                })</p>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><span class="font-semibold">Gsap.from(Box-2) :</span>
+                            <p class="text-xl">gsap.from('#box2',{
+                                height:150,
+                                x:150,
+                                duration:2,
+                                scale:1,
+                                backgroundColor:"blue",
+                                rotate:360,
+                                repeat:-1,
+                                opacity:0,
+                                borderRadius:"50%",
+                                ease:'power2.inOut',
+                                onComplete:()=>{
+                                console.log('animation complete')
+                                }
+                                })</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mb-2 ">
+        <h1 class=" text-center font-bold text-3xl"><span class="bg-white px-2  text-dark">Day-2</span></h1>
+        <div class="bg-blue-100 w-full">
+            <div class="grid grid-cols-2">
+                <div class="bg-white grid grid-cols-3 m-2 p-2 ">
+                    <div id="box3" class="w-[180px] h-[150px] bg-cyan-500 flex justify-center items-center ">
+                        <h1 class="font-bold text-white">Box3</h1>
+                    </div>
+                    <div id="box4" class="w-[180px] h-[150px] bg-emerald-600 flex justify-center items-center ">
+                        <h1 class="font-bold text-white">Box4</h1>
+                    </div>
+                    <div id="box5" class="w-[180px] h-[150px] bg-purple-300	 flex justify-center items-center ">
+                        <h1 class="font-bold text-white">Box5</h1>
+                    </div>
+
+                </div>
+                <div class="bg-white m-2 p-2">
+                    <h1 class="font-bold">Without TimeLine : </h1>
+                    <p class="ml-2 font-semibold">If managing and calculating time feels overwhelming, using a timeline
+                        property can help simplify it.</p>
+                    <pre>
+ gsap.from('#box3',{   gsap.from('#box4',{  gsap.from('#box5',{                    
+     y:50,                 y:50,                y:50,           
+     opacity:0,            opacity:0,           opacity:0,               
+     duration:1,           duration:2,          duration:4,                 
+                                            
+ })                    })                   })   
+                    </pre>
+                </div>
+            </div>
+            <div id="nav" class="flex   justify-between items-center p-3">
+                <h3 id="ravi" class="text-dark font-bold text-2xl">Ravi</h3>
+                <div id="part2" class="flex gap-3 ">
+                    <h4>Home</h4>
+                    <h4>About</h4>
+                    <h4>Cources</h4>
+                    <h4>Contact</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" cossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
